@@ -396,3 +396,40 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# Dossiers à ignorer
+Archives
+Bak
+Tmp
+Codes
+Dist
+Doc
+VBBrainBox_fichiers
+
+*.bat
+*.bak
+*.bba
+*.dbe
+*.exe
+*.exe.config
+*.html
+*.xml
+*.vbproj.ini
+*.*.dll
+VBBrainBox_*.txt
+Rapport.txt
+VBBrainBox.doc
+
+Applications/RapportExemple.txt
+Applications/RapportA*.txt
+Applications/ModeFichiersTxt/As*
+Applications/ModeFichiersTxt/Animal00
+Applications/VB6/
+Applications/Off*/
+Applications/Dep*/
+Applications/Bet*/
+Applications/AutresSystèmes/
+Applications/DBToFile2_0.mdb
+Applications/VBBrainBox.txt
+Applications/VBBrainBoxAv*.mdb
+Applications/VBBrainBox0.mdb

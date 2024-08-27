@@ -1,0 +1,122 @@
+R
+* Application : Plantes
+* Description : Identification de plantes
+* Date        : 15/03/2003
+* Version     : 0.5
+* Remarque    : Article 1982 T.S.I. Technique et Science Informatiques, vol. 1, n°2, page 131
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 28/04/2003 09:40:27
+
+RA
+* * Règle n° 1 : RA : 15/03/2003
+
+si bFleur = "VRAI"
+et bGraine = "VRAI"
+alors bPhanérogame = "VRAI"
+
+------------------------------------------------------------
+RB
+* * Règle n° 2 : RB : 15/03/2003
+
+si bGraineNue = "VRAI"
+et bPhanérogame = "VRAI"
+alors bSapin = "VRAI"
+
+------------------------------------------------------------
+RC
+* * Règle n° 3 : RC : 15/03/2003
+
+si b1Cotylèdone = "VRAI"
+et bPhanérogame = "VRAI"
+alors bMonocotylédone = "VRAI"
+
+------------------------------------------------------------
+RD
+* * Règle n° 4 : RD : 15/03/2003
+
+si b2Cotylèdone = "VRAI"
+et bPhanérogame = "VRAI"
+alors bDicotylèdone = "VRAI"
+
+------------------------------------------------------------
+RE
+* * Règle n° 5 : RE : 15/03/2003
+
+si bMonocotylédone = "VRAI"
+et bRhizome = "VRAI"
+alors bMuguet = "VRAI"
+
+------------------------------------------------------------
+RF
+* * Règle n° 6 : RF : 15/03/2003
+
+si bDicotylèdone = "VRAI"
+alors bAnémone = "VRAI"
+
+------------------------------------------------------------
+RG
+* * Règle n° 7 : RG : 15/03/2003
+
+si bMonocotylédone = "VRAI"
+et bRhizome = "FAUX"
+alors bLilas = "VRAI"
+
+------------------------------------------------------------
+RH
+* * Règle n° 8 : RH : 15/03/2003
+
+si bFeuille = "VRAI"
+et bFleur = "VRAI"
+alors bCryptogramme = "VRAI"
+
+------------------------------------------------------------
+RI
+* * Règle n° 9 : RI : 15/03/2003
+
+si bCryptogramme = "VRAI"
+et bRacine = "FAUX"
+alors bMousse = "VRAI"
+
+------------------------------------------------------------
+RJ
+* * Règle n° 10 : RJ : 15/03/2003
+
+si bCryptogramme = "VRAI"
+et bRacine = "VRAI"
+alors bFougère = "VRAI"
+
+------------------------------------------------------------
+RK
+* * Règle n° 11 : RK : 15/03/2003
+
+si bFeuille = "FAUX"
+et bPlante = "VRAI"
+alors bTallophyte = "VRAI"
+
+------------------------------------------------------------
+RL
+* * Règle n° 12 : RL : 15/03/2003
+
+si bChlorophylle = "VRAI"
+et bTallophyte = "VRAI"
+alors bAlgue = "VRAI"
+
+------------------------------------------------------------
+RM
+* * Règle n° 13 : RM : 15/03/2003
+
+si bChlorophylle = "FAUX"
+et bTallophyte = "VRAI"
+alors bChampignon = "VRAI"
+
+------------------------------------------------------------
+RN
+* * Règle n° 14 : RN : 15/03/2003
+
+si bFeuille = "FAUX"
+et bFleur = "FAUX"
+et bPlante = "FAUX"
+alors bCollibacille = "VRAI"
+
+------------------------------------------------------------
+============================================================

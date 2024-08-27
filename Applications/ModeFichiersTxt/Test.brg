@@ -1,0 +1,29 @@
+R
+* Application : Test ; a ; b
+* Date        : 27/04/2003
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 27/04/2003 11:47:04
+
+R_Test
+* * Règle n° 1 : Test (0.5) : 08/04/2003
+
+si bTest D "VRAI"
+alors bConclusion = "VRAI"
+
+------------------------------------------------------------
+R_Test2
+* * Règle n° 2 : Test2 (0.8) : 09/04/2003
+
+si bConclusion = "VRAI"
+alors bConclusion2 = "VRAI"
+
+------------------------------------------------------------
+R_Test3
+* * Règle n° 3 : Test3 (1) : 25/04/2003
+
+si bTest3 = "VRAI"
+alors bConclusion = "VRAI"
+et bConclusion2 = "VRAI"
+
+------------------------------------------------------------
+============================================================

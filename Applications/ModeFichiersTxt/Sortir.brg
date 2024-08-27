@@ -1,0 +1,59 @@
+R
+* Application : Sortir
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb
+* Date : 30/03/2003 10:58:56
+
+R00
+* * Règle numéro  1
+* * Date     : 15/03/2003
+
+si Ambiance = "COOL"
+alors Sortir = "VRAI"
+
+------------------------------------------------------------
+R01
+* * Règle numéro  2
+* * Date     : 25/03/2003
+
+si Ambiance = "COOL"
+et BeauTemps = "VRAI"
+et Froid = "FAUX"
+alors Sortir = "VRAI"
+
+------------------------------------------------------------
+R02
+* * Règle numéro  3
+* * Date     : 22/03/2003
+
+si BeauTemps = "FAUX"
+alors RegarderDVD = "VRAI"
+
+------------------------------------------------------------
+R03
+* * Règle numéro  4
+* * Date     : 15/03/2003
+
+si BeauTemps = "FAUX"
+et Froid = "VRAI"
+alors RegarderDVD = "VRAI"
+
+------------------------------------------------------------
+R04
+* * Règle numéro  5
+* * Date     : 15/03/2003
+
+si Temperature < 20
+alors Froid = "VRAI"
+et FumerMoquette = "VRAI"
+
+------------------------------------------------------------
+R05
+* * Règle numéro  6
+* * Date     : 15/03/2003
+
+si Temperature G 20
+alors Froid = "FAUX"
+et FumerMoquette = "FAUX"
+
+------------------------------------------------------------
+============================================================

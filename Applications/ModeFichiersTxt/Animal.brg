@@ -1,0 +1,143 @@
+R
+* Application : Animal
+* Description : Mais qu'est-ce que c'est que cette bestiole là ?
+Classification sommaire (identification) d'un animal à partir de ses caractéristiques
+* Auteur      : Dargenton Patrice
+* EMail       : patrice.dargenton@free.fr
+* Web         : http://patrice.dargenton.free.fr/index.html
+* Date        : 25/02/2003
+* Version     : 0.5
+* Remarque    : J'ai trouvé cet exemple dans mes cours d'I.A.
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 28/04/2003 09:40:10
+
+R01
+* * Règle n° 1 : R01 (0.2) : 15/03/2003
+
+si bPoils = "VRAI"
+alors bMammifère = "VRAI"
+
+------------------------------------------------------------
+R02
+* * Règle n° 2 : R02 (0.9) : 15/03/2003
+
+si bDonneDuLait = "VRAI"
+alors bMammifère = "VRAI"
+
+------------------------------------------------------------
+R03
+* * Règle n° 3 : R03 (0.6) : 15/03/2003
+
+si bPlumes = "VRAI"
+alors bOiseau = "VRAI"
+
+------------------------------------------------------------
+R04
+* * Règle n° 4 : R04 (0.9) : 15/03/2003
+
+si bPondDesOeufs = "VRAI"
+et bVole = "VRAI"
+alors bOiseau = "VRAI"
+
+------------------------------------------------------------
+R05
+* * Règle n° 5 : R05 (0.9) : 15/03/2003
+
+si bMammifère = "VRAI"
+et bMangeDeLaViande = "VRAI"
+alors bCarnivore = "VRAI"
+
+------------------------------------------------------------
+R06
+* * Règle n° 6 : R06 (0.6) : 15/03/2003
+
+si bCanines = "VRAI"
+et bDentsPointues = "VRAI"
+et bMammifère = "VRAI"
+et bYeuxVerts = "VRAI"
+alors bCarnivore = "VRAI"
+
+------------------------------------------------------------
+R07
+* * Règle n° 7 : R07 (0.8) : 15/03/2003
+
+si bMammifère = "VRAI"
+et bSabots = "VRAI"
+alors bOngulé = "VRAI"
+
+------------------------------------------------------------
+R08
+* * Règle n° 8 : R08 (0.6) : 15/03/2003
+
+si bMammifère = "VRAI"
+et bRuminant = "VRAI"
+alors bOngulé2Ou4Orteils = "VRAI"
+
+------------------------------------------------------------
+R09
+* * Règle n° 9 : R09 (0.6) : 15/03/2003
+
+si bCarnivore = "VRAI"
+et bCouleurFauve = "VRAI"
+et bPointsNoirs = "VRAI"
+alors bPanthère = "VRAI"
+
+------------------------------------------------------------
+R10
+* * Règle n° 10 : R10 (0.6) : 15/03/2003
+
+si bCarnivore = "VRAI"
+et bCouleurFauve = "VRAI"
+et bRayuresNoires = "VRAI"
+alors bTigre = "VRAI"
+
+------------------------------------------------------------
+R11
+* * Règle n° 11 : R11 (0.7) : 15/03/2003
+
+si bCouleurFauve = "VRAI"
+et bLongCou = "VRAI"
+et bLonguesPattes = "VRAI"
+et bOngulé = "VRAI"
+et bPointsNoirs = "VRAI"
+alors bGiraffe = "VRAI"
+
+------------------------------------------------------------
+R12
+* * Règle n° 12 : R12 (0.8) : 15/03/2003
+
+si bCouleurBlanche = "VRAI"
+et bOngulé = "VRAI"
+et bRayuresNoires = "VRAI"
+alors bZèbre = "VRAI"
+
+------------------------------------------------------------
+R13
+* * Règle n° 13 : R13 (0.7) : 15/03/2003
+
+si bCouleurBlancheEtNoir = "VRAI"
+et bLongCou = "VRAI"
+et bLonguesPattes = "VRAI"
+et bOiseau = "VRAI"
+et bVole = "FAUX"
+alors bAutruche = "VRAI"
+
+------------------------------------------------------------
+R14
+* * Règle n° 14 : R14 (0.9) : 15/03/2003
+
+si bNage = "VRAI"
+et bOiseau = "VRAI"
+et bVole = "FAUX"
+alors bPingouin = "VRAI"
+
+------------------------------------------------------------
+R15
+* * Règle n° 15 : R15 (0.2) : 15/03/2003
+
+si bOiseau = "VRAI"
+et bVoleBien = "VRAI"
+alors bAlbatros = "VRAI"
+
+------------------------------------------------------------
+============================================================

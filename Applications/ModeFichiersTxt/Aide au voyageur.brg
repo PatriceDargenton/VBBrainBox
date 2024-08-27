@@ -1,0 +1,66 @@
+R
+* Application : Aide au voyageur
+* Description : Illustration d'un système d'aide à la décision assez simple
+* Web         : https://perso.liris.cnrs.fr/alain.mille/enseignements/Master_PRO/BIA/chap2.htm#2.2.1
+* Date        : 15/03/2003
+* Version     : 1.0
+* Remarque    : Ce système contient deux règles contradictoires : R3 et R7. Il illustre comment contourner cette contradiction avec une solution possible : la règle R3 n'est plus contradictoire avec la règle R7
+* Base de règles convertie : D:\Patrice\PatDev\VBFranceContribPerso\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 25/08/2024 12:00:57
+
+R1
+* * Règle n° 1 : R1 : 15/03/2003
+
+si Distance < 2
+alors bAllerAPied = "VRAI"
+
+------------------------------------------------------------
+R2
+* * Règle n° 2 : R2 : 15/03/2003
+
+si Distance G 2
+et Distance < 300
+alors bPrendreLeTrain = "VRAI"
+
+------------------------------------------------------------
+R3
+* * Règle n° 3 : R3 : 15/03/2003
+
+si bRègle7Vérifiée = "FAUX"
+et Distance G 300
+alors bPrendreLAvion = "VRAI"
+
+------------------------------------------------------------
+R4
+* * Règle n° 4 : R4 : 15/03/2003
+
+si bAcheterUnBillet = "VRAI"
+et bAvoirLeTéléphone = "VRAI"
+alors bTéléphonerALAgence = "VRAI"
+
+------------------------------------------------------------
+R5
+* * Règle n° 5 : R5 : 15/03/2003
+
+si bAcheterUnBillet = "VRAI"
+et bAvoirLeTéléphone = "FAUX"
+alors bAllerALAgence = "VRAI"
+
+------------------------------------------------------------
+R6
+* * Règle n° 6 : R6 : 15/03/2003
+
+si bPrendreLAvion = "VRAI"
+alors bAcheterUnBillet = "VRAI"
+
+------------------------------------------------------------
+R7
+* * Règle n° 7 : R7 : 15/03/2003
+
+si bFonctionnaire = "VRAI"
+et Durée > 2
+alors bPrendreLAvion = "FAUX"
+et bRègle7Vérifiée = "VRAI"
+
+------------------------------------------------------------
+============================================================

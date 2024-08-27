@@ -1,0 +1,22 @@
+R
+* Application : Application minimale : Hello World !
+* Description : Démonstration de VBBrainBox : cette application ne contient qu'une seule règle, elle permet de préciser ce qu'il faut au minimum pour créer une nouvelle application d'expertise.
+* Auteur      : Dargenton Patrice
+* EMail       : patrice.dargenton@free.fr
+* Web         : http://patrice.dargenton.free.fr/index.html
+* Date        : 13/03/2003
+* Version     : 1.0
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 29/04/2003 09:38:41
+
+R1
+* * Règle n° 1 : R1 : 15/03/2003
+* * Description : Si ça marche, c'est super cool !
+* * Origine     : C'est moi qui l'ai fait !
+* * Remarque    : Consultez la doc pour bien comprendre le fonctionnement de cette application gigantesque !
+
+si bCaMarche = "VRAI"
+alors bCEstSuper = "VRAI"
+
+------------------------------------------------------------
+============================================================

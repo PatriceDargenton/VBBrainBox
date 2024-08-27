@@ -1,0 +1,31 @@
+R
+* Application : Immortalité2
+* Description : Illustration du changement de configuration par rapport à Immortalité (1ère version)
+* Date        : 15/03/2003
+* Version     : 1.0
+* Remarque    : Illustration de la détection des règles contradictoires en logique non monotone : si les règles contradictoires ne sont pas autorisées, l'expertise s'arrête dès qu'une contradiction est trouvée dans les règles
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 28/04/2003 09:40:23
+
+R1_Mortalité
+* * Règle n° 1 : R1_Mortalité : 15/03/2003
+
+si bHomme = "VRAI"
+alors bMortel = "VRAI"
+
+------------------------------------------------------------
+R2_Immortalité
+* * Règle n° 2 : R2_Immortalité : 15/03/2003
+
+si bChrist = "VRAI"
+alors bMortel = "FAUX"
+
+------------------------------------------------------------
+R3_CondHum
+* * Règle n° 3 : R3_CondHum : 15/03/2003
+
+si bMortel = "VRAI"
+alors bConditionHumaine = "VRAI"
+
+------------------------------------------------------------
+============================================================

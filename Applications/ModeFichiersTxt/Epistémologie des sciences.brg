@@ -1,0 +1,188 @@
+R
+* Application : Epistémologie des sciences
+* Description : Comment savoir si une discipline relève d'une démarche scientifique ou pas ?
+* Auteur      : Dargenton Patrice
+* EMail       : patrice.dargenton@free.fr
+* Web         : http://patrice.dargenton.free.fr/index.html
+* Date        : 08/04/2003
+* Version     : 0.5
+* Base de règles convertie : D:\Patrice\PatDev\VBBrainBox\Applications\VBBrainBox.mdb (version : 1)
+* Date : 22/04/2003 08:52:37
+
+R_Blurg
+* * Règle n° 1 : Blurg (0.8) : 09/04/2003
+* * Description : Baliverne Lamentable à l'Usage Réservé des Gogos (def. Science & Vie)
+
+si bEffetsMesurables = "FAUX"
+et bExpérimentable = "FAUX"
+et bProuvabilitéRefutable = "FAUX"
+et bProuvable = "FAUX"
+et bRéfutable = "FAUX"
+et bThéorieVraissemblable = "FAUX"
+alors bBlurg = "VRAI"
+
+------------------------------------------------------------
+R_Cohérence
+* * Règle n° 2 : Cohérence (0.7) : 25/03/2003
+* * Description : Si une théorie est cohérente, elle peut être vraie ! et elle concerne de fait la science !
+
+si bThéorieCohérente = "VRAI"
+alors bDomaineScientifique = "VRAI"
+et bThéorieVraissemblable = "VRAI"
+
+------------------------------------------------------------
+R_Controverse
+* * Règle n° 3 : Controverse (0.2) : 25/03/2003
+* * Description : Simple règle de prudence... et de mauvaise foi !
+* * Origine     : Conservatisme académique
+
+si Controverse > 50
+alors bThéorieVraissemblable = "FAUX"
+
+------------------------------------------------------------
+R_Incohérence
+* * Règle n° 4 : Incohérence (0.8) : 25/03/2003
+* * Description : Si une théorie est incohérente, elle est sans doute fausse !
+
+si bThéorieCohérente = "FAUX"
+alors bThéorieVraissemblable = "FAUX"
+
+------------------------------------------------------------
+R_Intox
+* * Règle n° 5 : Intox (0.7) : 02/04/2003
+* * Description : Si une théorie non réfutable est peu vraissemblable (fiabilité faible) alors c'est potentiellement une intox
+* * Remarque    : La fiabilité est cette fois entre 0 et 100, car les réels ne sont pas traités ; il n'y a pas de lien avec la fiabilité du SE dans cette version
+
+si bRéfutable = "FAUX"
+et bThéorieCohérente = "FAUX"
+et Fiabilité < 30
+alors bIntox = "VRAI"
+
+------------------------------------------------------------
+R_Marketing
+* * Règle n° 6 : Marketing (0.1) : 25/03/2003
+* * Description : Si ça génère du cash, alors il y a du vrai là-dedans ! (au moins au niveau de la réalité économique)
+* * Origine     : Cynisme marchand
+
+si bChiffreDAffaireImportant = "VRAI"
+alors bThéorieVraissemblable = "VRAI"
+
+------------------------------------------------------------
+R_Mesurabilité
+* * Règle n° 7 : Mesurabilité (0.6) : 21/04/2003
+* * Description : Si il y a quelque chose à mesurer, c'est déjà ça !
+
+si bEffetsMesurables = "VRAI"
+alors bDomaineScientifique = "VRAI"
+
+------------------------------------------------------------
+R_Non-science
+* * Règle n° 8 : Non-science (0.8) : 25/03/2003
+* * Description : Modus Tollens de la règle Science
+* * Origine     : Le siècle des lumières
+
+si bRéfutable = "FAUX"
+alors bDomaineScientifique = "FAUX"
+
+------------------------------------------------------------
+R_Philosophie
+* * Règle n° 9 : Philosophie (0.7) : 21/04/2003
+* * Description : Si la recherche est inépuisable, alors c'est une démarche plus philosophie que scientifique !
+
+si bProuvabilitéComplète = "FAUX"
+alors bDomainePhilosophique = "VRAI"
+
+------------------------------------------------------------
+R_Pipeaulogie
+* * Règle n° 10 : Pipeaulogie (0.7) : 14/04/2003
+* * Description : Scientisme et pipeaulogie : la vérité !
+* * Remarque    : Une théorie scientiste non prouvée et qui n'est pas controversée, c'est probablement du pipeau !
+
+si bProuvé = "FAUX"
+et bThéorie = "VRAI"
+et bThéorieScientiste = "VRAI"
+et bThéorieVraissemblable = "FAUX"
+et Controverse L 50
+alors bPipeaulogie = "VRAI"
+
+------------------------------------------------------------
+R_Popularité
+* * Règle n° 11 : Popularité (0.2) : 25/03/2003
+* * Description : Si tout le monde y croit, ça doit être vrai ! non ?
+* * Origine     : Manque d'individualité et d'audace
+
+si bThéoriePopulaire = "VRAI"
+alors bThéorieVraissemblable = "VRAI"
+
+------------------------------------------------------------
+R_Preuve
+* * Règle n° 12 : Preuve (0.9) : 25/03/2003
+* * Description : Si c'est prouvé, ce n'est plus une théorie, c'est une science
+* * Origine     : Le siècle des lumières
+
+si bProuvé = "VRAI"
+alors bDomaineScientifique = "VRAI"
+et bScience = "VRAI"
+et bThéorie = "FAUX"
+et bThéorieVraissemblable = "VRAI"
+et Controverse = 0
+
+------------------------------------------------------------
+Réfutabilité
+* * Règle n° 13 : Réfutabilité : 21/04/2003
+* * Description : Si la méthode de prouvabilité est complète, alors la théorie est réfutable !
+
+si bProuvabilitéComplète = "VRAI"
+alors bRéfutable = "VRAI"
+
+------------------------------------------------------------
+Réfutation
+* * Règle n° 14 : Réfutation (0.9) : 25/03/2003
+* * Description : Si la théorie est déjà réfutée, alors elle est fausse
+
+si bDéjàRéfuté = "VRAI"
+alors bChiffreDAffaireImportant = "FAUX"
+et bDomaineScientifique = "FAUX"
+et bProuvé = "FAUX"
+et bThéorieVraissemblable = "FAUX"
+et Controverse = 0
+
+------------------------------------------------------------
+R_Science
+* * Règle n° 15 : Science (0.7) : 25/03/2003
+* * Description : La science ne s'occupe que des théories réfutables (sujettes à vérification)
+* * Origine     : Le siècle des lumières
+
+si bRéfutable = "VRAI"
+alors bDomaineScientifique = "VRAI"
+
+------------------------------------------------------------
+R_Théorie
+* * Règle n° 16 : Théorie (0.8) : 03/04/2003
+* * Description : Si ce n'est ni prouvable, ni réfutable, ni expérimentable alors cela reste une théorie
+
+si bExpérimentable = "FAUX"
+et bProuvable = "FAUX"
+et bRéfutable = "FAUX"
+alors bThéorie = "VRAI"
+
+------------------------------------------------------------
+R_Théorie-2
+* * Règle n° 17 : Théorie-2 (0.8) : 03/04/2003
+* * Description : Si ce n'est pas prouvé, cela reste une théorie
+
+si bProuvé = "FAUX"
+alors bThéorie = "VRAI"
+
+------------------------------------------------------------
+R_Vraisemblance
+* * Règle n° 18 : Vraisemblance (0.2) : 25/03/2003
+* * Description : Si une théorie (non prouvée) n'a pas encore été réfutée, elle est peu vraissemblable, non ?
+* * Origine     : Conservatisme académique
+
+si bDéjàRéfuté = "FAUX"
+et bProuvé = "FAUX"
+alors bThéorieVraissemblable = "FAUX"
+
+------------------------------------------------------------
+============================================================
